@@ -1,0 +1,9 @@
+There is no wheel (prebuilt package) for Python 3.7 on Windows (there is one for Python 2.7 and 3.4 up to 3.6) 
+so you need to prepare build environment on your PC to use this package. Easier would be finding the wheel for 3.7 
+as some packages are quite hard to build on Windows.
+
+step0. look your python version and build (mine at installation 3.7 , build 32)
+step1. download suitable wheel(.whl) file
+	link-->> https://www.lfd.uci.edu/~gohlke/pythonlibs/
+
+step2. pip install <downloaded file>
