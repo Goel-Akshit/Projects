@@ -51,19 +51,28 @@ def getLyrics(url):
 
 
 print("welcome To LyricsDownloader By Akshit Goel :")
-textualQuery = speechToText()
-searchQuery = createSearchQuery(textualQuery)
-wholePage = webScrapper(searchQuery)
-urls_list = urlScrapper(wholePage)
-lyrics = getLyrics(urls_list[0])
-print(lyrics)
-print("===================================================")
-flag = input("Want to save your file: [y/n] :")
-if flag=='y':
-    name = input("input name for your file :")
-    f = open(name+".txt","w+")
-    f.write(lyrics)
-    f.close
+flag = False
+try:
+    textualQuery = speechToText()
+    searchQuery = createSearchQuery(textualQuery)
+    wholePage = webScrapper(searchQuery)
+    # print(wholePage.prettify())
+    urls_list = urlScrapper(wholePage)
+    print(urls_list[0])
+    lyrics = getLyrics(urls_list[0])
+    flag =True
+except:
+    print("Sorry No Result Found For Your Query")
+
+if flag:
+    print(lyrics)
+    print("===================================================")
+    flag = input("Want to save your file: [y/n] :")
+    if flag=='y':
+        name = input("input name for your file :")
+        f = open(name+".txt","w+")
+        f.write(lyrics)
+        f.close
 
 
 
