@@ -56,9 +56,7 @@ try:
     textualQuery = speechToText()
     searchQuery = createSearchQuery(textualQuery)
     wholePage = webScrapper(searchQuery)
-    # print(wholePage.prettify())
     urls_list = urlScrapper(wholePage)
-    print(urls_list[0])
     lyrics = getLyrics(urls_list[0])
     flag =True
 except:
